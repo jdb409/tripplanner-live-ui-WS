@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
-const swig = require('swig');
-swig.setDefaults({ cache: false });
+const nunjucks = require('nunjucks');
+
 const db = require('./db');
 const { Hotel, Restaurant, Activity, Place } = db.models;
 
 const app = express();
 app.set('view engine', 'html');
-app.engine('html', swig.renderFile);
+app.engine('html', nunjucks.render);
+nunjucks.configure('views', {noCache: true});
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
@@ -20,7 +21,7 @@ catch(ex){
 
 }
 app.use(function(req, res, next){
-  res.locals.GOOGLE_API_KEY = config.GOOGLE_API_KEY;
+  res.locals.GOOGLE_API_KEY = 'AIzaSyB5TsvVYdAxcaBAMFCpIq0aq0RPcVFfmw4';
   next();
 });
 

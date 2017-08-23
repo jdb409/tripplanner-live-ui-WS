@@ -1,5 +1,6 @@
 body {
   color: blue;
+  background-color: rgb(222,184,135);
 }
 #map {
   height: 100%;
