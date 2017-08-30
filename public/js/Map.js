@@ -1,7 +1,7 @@
-function Map(id){
-  this.id = id;
-  this.init();
-}
+// function Map(id){
+//   this.id = id;
+//   this.init();
+// }
 
 Map.prototype.init = function(){
   var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
@@ -15,6 +15,19 @@ Map.prototype.init = function(){
   var map_canvas_obj = document.getElementById(this.id);
   // initialize a new Google Map with the options
   var map = new google.maps.Map(map_canvas_obj, mapOptions);
-
+  
+  
 
 }
+
+// // Map.prototype.addMarker = function(){
+// //   var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
+  
+// //   var marker = new google.maps.Marker({
+// //       position: myLatlng,
+// //       title:"Hello World!"
+// //   });
+  
+// //   // To add the marker to the map, call setMap();
+// //   marker.setMap(map);
+// // }

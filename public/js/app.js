@@ -1,3 +1,7 @@
-$(function(){
-  var map = new Map('map');
-});
+// $(function(){
+//   var map = new Map('map');
+  
+// });
+
+
+
