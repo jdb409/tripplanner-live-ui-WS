@@ -159,9 +159,15 @@
     $('#days').append(' <li><a href="#">' + day + '</a></l1>')
   })
 
+  // $('#remove').on('click', function () {
+  //  var active = $('.active').text()*1;
+  //   itineraryArr.splice(active,1);
+  //   showMarkers(markers, (day - 1) * 3);
+  // })
+
 
   $('#days').on('click', 'a', function () {
-    showMarkers(markers, (day - 1) * 3);
+    
     $(this).parent().parent().children().removeClass('active');
     $(this).addClass('active');
     day = $(this).text() * 1;
@@ -183,6 +189,7 @@
 
     $(li[2]).text(itineraryArr[day - 1].activity.name);
 
+    showMarkers(markers, (day - 1) * 3);
     
   });
 
